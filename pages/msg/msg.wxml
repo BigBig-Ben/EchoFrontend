@@ -1,0 +1,53 @@
+<view class='headNav'>
+    <view data-id='COMMENT' bindtap='select' class="{{navSelect=='COMMENT' ? 'active' : ''}}">评论</view>
+    <view data-id='LIKE' bindtap='select' class="{{navSelect=='LIKE' ? 'active' : ''}}">点赞</view>
+    <view data-id='DATE' bindtap='select' class="{{navSelect=='DATE' ? 'active' : ''}}">相约</view>
+</view>
+<view hidden="{{navSelect!='COMMENT'}}">
+    <view class='record' wx:for="{{comments}}" bindtap='toDetail' data-voiceid='{{item.Voice.VoiceId}}'>
+      <view class='h_content'>
+        <image src='{{item.Icon}}' class='icon'></image>
+        <view class='t_content'>
+          <view class='name'>{{item.Name}}</view>
+          <view class='time'>刚刚评论了你：</view>
+        </view>
+      </view>
+      <view class='d_content'>
+        <view class='desc'>
+          {{item.Desc}}
+        </view>
+      </view>
+    </view> 
+</view>
+<view hidden="{{navSelect!='LIKE'}}">
+    <view class='record' wx:for="{{likes}}" bindtap='toDetail' data-voiceid='{{item.Voice.VoiceId}}'>
+      <view class='h_content'>
+        <image src='{{item.Icon}}' class='icon'></image>
+        <view class='t_content'>
+          <view class='name'>{{item.Name}}</view>
+          <view class='time'></view>
+        </view>
+      </view>
+      <view class='d_content'>
+        <view class='desc'>
+          刚刚赞了你的{{item.type=='COMMENT'?'评论':'帖子'}}
+        </view>
+      </view>
+    </view> 
+</view>
+<view hidden="{{navSelect!='DATE'}}">
+    <view class='record' wx:for="{{dates}}">
+      <view class='h_content'>
+        <image src='{{item.Icon}}' class='icon'></image>
+        <view class='t_content'>
+          <view class='name'>{{item.Name}}</view>
+          <view class='time'>{{item.Time}}</view>
+        </view>
+      </view>
+      <view class='d_content' bindtap='toDetail' data-voiceid='{{item.VoiceId}}'>
+        <view class='desc'>
+          {{item.Desc}}
+        </view>
+      </view>
+    </view> 
+</view>

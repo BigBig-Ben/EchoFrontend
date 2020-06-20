@@ -1,0 +1,51 @@
+<view class="all">
+  <view class="kuangjia1">
+    <view class="title">活动主题</view>
+    <scroll-view scroll-x="true" class="content">
+      <view class="tag {{navSelect==item.id ? 'active' : ''}}" wx:for="{{tags}}" 
+        bindtap="chooseTag" data-id="{{item.id}}">{{item.name}}</view>
+      <!-- <view class="tag">自习</view>
+      <view class="tag">游戏</view>
+      <view class="tag">电影</view>
+      <view class="tag">锻炼</view> -->
+    </scroll-view>
+  </view>
+  <view class="kuangjia2">
+    <view class="title">活动详情</view>
+    <view class="content">
+      <textarea placeholder="在此输入活动详情，如时间、地点和活动内容" maxlength="78" class="text" placeholder-class="text_placehoder" value="{{DateDesc}}" bindinput="input"></textarea>
+      <view class="img-box">
+        <view class="img" wx:for="{{img_url}}" wx:for-item="item" wx:key="*this">
+          <image src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+          <view class="delete-btn" data-index="{{index}}" catchtap="deleteImg">删除</view>    
+        </view>
+        <image class="picture" mode='aspectFit' src='../../imgs/empty.png' bindtap="chooseImg" wx:if="{{img_url.length<3}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="kuangjia3">
+    <view class="title">位置信息</view>
+    <view class="content" bindtap="getLocation">
+     <view class="text">{{Location.Name=='' ? '选择位置' : Location.Name}}</view>
+     <image class="picture" mode='aspectFit' src='../../imgs/go.png'></image>
+    </view>
+  </view>
+  <view class="title">总人数</view>
+  <view class="kuangjia4">
+      <view class="content">
+        <view class="text">男</view>
+        <image class="picture" mode='aspectFit' src='../../imgs/man.png'></image>
+        <image class="jian" mode='aspectFit' src='../../imgs/jian.png' wx:if="{{MaleNum>0}}" bindtap="subNum" data-gender="Male"></image>
+        <view class="sum">{{MaleNum}}</view>
+        <image class="jia" mode='aspectFit' src='../../imgs/jia.png' wx:if="{{MaleNum<6}}" bindtap="addNum" data-gender="Male"></image>
+      </view>
+      <view class="content">
+        <view class="text">女</view>
+        <image class="picture" mode='aspectFit' src='../../imgs/woman.png'></image>
+        <image class="jian" mode='aspectFit' src='../../imgs/jian.png' wx:if="{{FemaleNum>0}}" bindtap="subNum" data-gender="Female"></image>
+        <view class="sum">{{FemaleNum}}</view>
+        <image class="jia" mode='aspectFit' src='../../imgs/jia.png' wx:if="{{FemaleNum<6}}" bindtap="addNum" data-gender="Female"></image>
+      </view>
+  </view>
+  <button class="button" bindtap="submit">确定</button>
+</view>

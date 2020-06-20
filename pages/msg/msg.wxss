@@ -1,0 +1,61 @@
+.headNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1rpx solid #7f7f7f6c;
+}
+  
+.headNav > view {
+    text-align: center;
+    width: 20%;
+    padding-bottom: 20rpx;
+    font-size: 30rpx;
+}
+
+.active {
+    border-bottom: 4rpx solid #cc2733;
+    color: #cc2733;
+}
+
+.record {
+    padding: 30rpx;
+    border-bottom: solid 1rpx #cfcfcf;
+}
+
+.h_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    border: #9f9f9f solid 1rpx;
+}
+
+.t_content {
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 26rpx;
+}
+
+.time {
+    font-size: 24rpx;
+    opacity: 0.5;
+}
+
+.d_content {
+    margin-top: 20rpx;
+    padding-left: 100rpx;
+}
+
+.desc {
+    font-size: 30rpx;
+}
+

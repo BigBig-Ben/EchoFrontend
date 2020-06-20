@@ -1,0 +1,43 @@
+<!--pages/add/add.wxml-->
+
+ <view class='page'>
+
+<button bindtap="send" class="bbttnn{{input?'btnactive':''}}" >
+  <view style='font-size:15px;'>发布</view>
+</button>
+<view class="tar">
+ <textarea class='text' value='{{VoiceDesc}}' bindinput="input" placeholder="share" auto-height/>
+</view>
+<view class="img-box">
+  <view class="img"   wx:for="{{img_url}}" wx:for-item="item" wx:key="*this">
+      <image src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+      <view class="delete-btn" data-index="{{index}}" catchtap="deleteImg">删除</view>    
+  </view> 
+</view>
+<view class='tag_content'>
+ <view class="tag" wx:for="{{select_tag}}" bindtap="delete" data-index="{{index}}">
+    {{item.text}}
+    <image mode="aspectFit" src='../../imgs/delete.png'></image>
+  </view>
+</view> 
+<view class="btns">
+  <image class="txxt" src='/imgs/2.png' bindtap="tagg" ></image>
+  <image class="txxt" src='/imgs/3.png' bindtap="chooseImg" wx:if="{{img_url.length<9}}" ></image>
+  <image class="txxt" src='/imgs/4.png' ></image>
+  <image class="txxt" src='/imgs/5.png' ></image>
+  <image class="txxt" src='/imgs/6.png'></image>
+</view>
+
+
+</view>
+
+   
+          
+   
+  
+
+
+
+
+
+

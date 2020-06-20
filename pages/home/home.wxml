@@ -1,0 +1,39 @@
+<view>
+  <view class='content'>
+    <view class='headNav'>
+      <view data-id='NEW' bindtap='select' class="{{navSelect=='NEW' ? 'active' : ''}}">最新</view>
+      <view data-id='HOT' bindtap='select' class="{{navSelect=='HOT' ? 'active' : ''}}">热门</view>
+    </view>
+    <view class='record' wx:for="{{voices}}" wx:for-item="voice">
+      <view class='h_content'>
+        <image src='{{voice.VoiceIcon}}' class='icon'></image>
+        <view class='t_content'>
+          <view class='name'>{{voice.Name}}</view>
+          <view class='time'>{{voice.Time}}</view>
+        </view>
+      </view>
+      <view class='d_content' bindtap='toDetail' data-voiceid='{{voice.VoiceId}}'>
+        <view class='desc'>
+          {{voice.VoiceDesc}}
+        </view>
+        <view class='imgs'>
+          <view class='imgContainer' wx:for="{{voice.VoiceImgs}}" wx:for-item="img">
+            <image catchtap="imgYu" data-list="{{voice.VoiceImgs}}" data-src="{{img}}" src='{{img}}' class='img' mode='aspectFill' lazy-load='true'></image>
+          </view>
+        </view>
+      </view>
+      <view class='tag_content'>
+        <view class='tag' wx:for="{{voice.TagStr}}" wx:for-item="tag">{{tag}}</view>
+      </view>
+      <view class='icon_content'>
+        <image wx:if="{{voice.HasLike}}" class="icons"  mode='aspectFit' src='../../imgs/star2.png' bindtap='star' data-voiceid='{{voice.VoiceId}}'></image>
+        <image wx:else class="icons"  mode='aspectFit' src='../../imgs/star.png' bindtap='star' data-voiceid='{{voice.VoiceId}}'></image>
+        <text wx:if="{{voice.VoiceLike}}" bindtap='star' data-voiceid='{{voice.VoiceId}}'>{{voice.VoiceLike}}</text>
+        <text wx:else bindtap='star' data-voiceid='{{voice.VoiceId}}'>点赞</text>
+        <image class="icons"  mode='aspectFit' src='../../imgs/comment.png' bindtap='toDetail' data-voiceid='{{voice.VoiceId}}'></image>
+        <text wx:if="{{voice.CommentCnt}}" bindtap='toDetail' data-voiceid='{{voice.VoiceId}}'>{{voice.CommentCnt}}</text>
+        <text wx:else bindtap='toDetail' data-voiceid='{{voice.VoiceId}}'>评论</text>
+      </view>
+    </view>  
+  </view>
+</view>

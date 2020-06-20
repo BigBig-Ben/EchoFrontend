@@ -1,0 +1,26 @@
+<!--pages/myDate/myDate.wxml-->
+
+<view id="all">
+  <scroll-view scroll-x="true" class="kuangjia2">
+    <view class="seat {{hasChooseSeat?'active':''}}" bindtap="changeHasSeat">
+      <image class="icons"  mode='aspectFit' src="{{hasChooseSeat?'../../imgs/yes2.png':'../../imgs/yes.png'}}"></image>
+      有空位
+    </view>
+    <br class='line' />
+    <view class="tag {{navSelect==item.id ? 'active' : ''}}" wx:for="{{tags}}" 
+        bindtap="chooseTag" data-id="{{item.id}}">{{item.name}}</view>
+  </scroll-view>
+ <scroll-view>
+  <view class="kuangjia3" wx:for="{{dates}}" bindtap="toDetail" data-dateid="{{item.DateId}}">
+    <view class="margin study" wx:if="{{item.TagName=='学习'}}">{{item.TagName}}</view>
+    <view class="margin game" wx:elif="{{item.TagName=='游戏'}}">{{item.TagName}}</view>
+    <view class="margin sports" wx:elif="{{item.TagName=='运动'}}">{{item.TagName}}</view>
+    <view class="margin others" wx:else>{{item.TagName}}</view>
+    <view class="right">
+      <view class="content">{{item.DateDesc}}</view>
+      <view class="time">{{item.Time}}</view>
+    </view>
+  </view>
+  <view style="height:30rpx;"></view>
+ </scroll-view>
+</view>

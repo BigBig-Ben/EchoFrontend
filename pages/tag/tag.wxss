@@ -1,0 +1,65 @@
+/* pages/tag/tag.wxss */
+.head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.kuangjia1{
+  height:70rpx;
+  width: 80%;
+  margin-left: 20rpx;
+  border-radius: 100rpx;
+  background-color: rgb(237, 237, 237);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.kuangjia1 image{
+  height: 37rpx;
+  width: 37rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.kuangjia1 input{
+  width: 100%;
+  color: rgb(186, 186, 186);
+  font-size: 31rpx;
+}
+.head .submit {
+  color: #64edac;
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-left: 20rpx;
+}
+.kuangjia2{
+  margin-top: 40rpx;
+}
+.title{
+  color: rgb(172, 172, 172);
+  font-size: 31rpx;
+  margin-left: 27rpx;
+}
+.tag_content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tag {
+  height: 46rpx;
+  border: 2rpx solid #9f9f9f;
+  border-radius: 23rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  line-height: 46rpx;
+  padding: 0 10rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  display: flex;
+}
+.kuangjia2 image{
+  height: 26rpx;
+  width: 26rpx;
+  margin-top: 10rpx;
+  margin-left: 5rpx;
+}

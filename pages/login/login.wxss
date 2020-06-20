@@ -1,0 +1,115 @@
+.all {
+  padding: 20rpx;
+}
+
+.all > view {
+  height: 80rpx;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #64edac;
+}
+
+.icon_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 300rpx;
+}
+
+.downArrow {
+  margin-left: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+scroll-view {
+  height: 800rpx;
+}
+
+.img {
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: 20rpx;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.content input {
+  border-bottom: 1rpx #000000 solid;
+}
+
+.icon_before {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+radio {
+  margin-left: 20rpx;
+}
+
+radio .wx-radio-input {
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;     /* 圆角 */
+  /* border: 2rpx solid red; */
+}
+
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;     /* 圆角 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;       /* 勾大小 */
+  color: #fff;			/* 白色勾  */
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.title {
+  position: relative;
+  width: 100%;
+  height: 500rpx;
+  text-align: center;
+  font-style: oblique;
+  margin-top: 50rpx;
+}
+
+.title1 {
+  position: relative;
+  z-index: -1;
+  top: 120rpx;
+  color: #64edac;
+  font-size:150rpx;
+  font-weight: 800;
+  opacity: 0.8;
+}
+
+.title2 {
+  position: relative;
+  right: -50rpx;
+  text-shadow:#1691d5 0 0 20px;
+  color:white;
+  font-size:220rpx
+}

@@ -1,0 +1,61 @@
+<scroll-view class='scroll' scroll-y>
+  <view class='record'>
+    <view class='h_content'>
+      <image src='{{voice.VoiceIcon}}' class='icon'></image>
+      <view class='t_content'>
+        <view class='name'>{{voice.Name}}</view>
+        <view class='time'>{{voice.Time}}</view>
+      </view>
+    </view>
+    <view class='d_content' bindtap='toDetail' data-voiceid='{{voice.VoiceId}}'>
+      <view class='desc'>
+        {{voice.VoiceDesc}}
+      </view>
+      <view class='imgs'>
+        <image bindtap="imgYu" data-list="{{voice.VoiceImgs}}" data-src="{{img}}" src='{{img}}' class='img' wx:for="{{voice.VoiceImgs}}" wx:for-item="img" mode='widthFix' lazy-load='true'></image>
+      </view>
+    </view>
+    <view class='tag_content'>
+      <view class='tag' wx:for="{{voice.TagStr}}" wx:for-item="tag">{{tag}}</view>
+    </view>
+    <view class='icon_content'>
+      <image wx:if="{{voice.VoiceHasLiked}}" class="icons"  mode='aspectFit' src='../../imgs/star2.png' bindtap='likeTap'></image>
+      <image wx:else class="icons"  mode='aspectFit' src='../../imgs/star.png' bindtap='likeTap'></image>
+      <text wx:if="{{voice.VoiceLike}}" bindtap='likeTap'>{{voice.VoiceLike}}</text>
+      <text wx:else bindtap='likeTap'>点赞</text>
+      <image class="icons"  mode='aspectFit' src='../../imgs/comment.png' bindtap='focus'></image>
+      <text wx:if="{{comment.length}}" bindtap='focus'>{{comment.length}}</text>
+      <text wx:else bindtap='focus'>评论</text>
+    </view>
+  </view>
+  <view style='height:20rpx; background-color:#DCDCDC;'></view>
+  <view class="comment_content">
+    <view wx:if="{{comment.length==0}}" class="msg">还没有评论，快来发出回声吧~</view>
+    <view class='comment' wx:for="{{comment}}" bindtap="commentfocus" data-index="{{index}}">
+      <view class="comment_head_content">
+        <view class='h_content'>
+          <image src='{{item.CommentIcon}}' class='icon'></image>
+          <view class='t_content'>
+            <view class='name'>{{item.Name}}</view>
+            <view class='time'>{{item.Time}}</view>
+          </view>
+        </view>
+        <view class="comment_icon_content" catchtap='commentlikeTap' data-index='{{index}}'>
+          <image wx:if="{{item.CommentHasLiked}}" class="icons"  mode='aspectFit' src='../../imgs/star2.png'></image>
+          <image wx:else class="icons"  mode='aspectFit' src='../../imgs/star.png'></image>
+          <text class="comment_like_num">{{item.CommentLike}}</text>
+        </view>
+      </view>
+      <view class='comment_body_content'>
+        <view class='num_layer'>{{index+1}}楼</view>
+        <view class='desc' wx:if="{{item.CommentType=='REPLY'}}"><text class="reply">回复{{item.CommentedFloor}}楼:</text>{{item.CommentDesc}}</view>
+        <view class='desc' wx:else>{{item.CommentDesc}}</view>
+      </view>
+    </view>
+    <view class='pinglunkuang' hidden='{{CommentHidden}}'>
+      <textarea class='input' auto-height="true" value="{{reCommentDesc}}" bindinput='input' type='input' placeholder='{{placeholder}}' focus='{{inputShowed}}'></textarea>
+      <image class='fasong' bindtap="fasong"  mode='aspectFit' src='../../imgs/send.png'></image>
+    </view>
+  </view>
+</scroll-view>
+

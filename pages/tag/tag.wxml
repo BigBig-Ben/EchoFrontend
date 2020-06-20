@@ -1,0 +1,45 @@
+<view class="head">
+  <view class="kuangjia1" >
+    <image mode='aspectFit' src='../../imgs/search.png'></image>
+    <input placeholder="添加标签可以获得更多互动" bindinput="search" value="{{value}}"></input>
+  </view>
+  <view class="submit" bindtap="submit">完成</view>
+</view>
+<view wx:if="{{change}}">
+<view class="kuangjia2">
+  <view class="title">创建新标签</view>
+  <view class='tag_content'>
+    <view class="tag" bindtap="creatTag">
+      {{inputValue}}
+    </view>
+  </view>
+</view>
+</view>
+
+<view wx:if="{{change1}}">
+<view class="kuangjia2">
+  <view class="title">已选标签</view>
+  <view class='tag_content'>
+    <view class="tag" wx:for="{{select_tag}}" bindtap="delete" data-index="{{index}}">
+      {{item.text}}
+      <image mode="aspectFit" src='../../imgs/delete.png'></image>
+    </view>
+  </view>
+</view>
+<view class="kuangjia2">
+  <view class="title">历史标签</view>
+  <view class='tag_content'>
+    <view class="tag" wx:for="{{history_tag}}">
+      {{item.text}}
+    </view>
+  </view>
+</view>
+<view class="kuangjia2">
+  <view class="title">推荐标签</view>
+  <view class='tag_content'>
+    <view class="tag" wx:for="{{recommend_tag}}" bindtap="add" data-item="{{item}}" style="color:{{item.color}}">
+      {{item.text}}
+    </view>
+  </view>
+</view>
+</view>

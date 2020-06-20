@@ -1,0 +1,75 @@
+.all {
+    padding: 20rpx;
+}
+
+.all > view {
+    height: 80rpx;
+}
+
+.icon_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    width: 80rpx;
+    height: 80rpx;
+    margin-left: 300rpx;
+}
+
+.downArrow {
+    margin-left: 30rpx;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+scroll-view {
+    height: 800rpx;
+}
+
+.img {
+    width: 200rpx;
+    height: 200rpx;
+    margin-left: 20rpx;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40rpx;
+}
+
+.content input {
+    border-bottom: 1rpx #000000 solid;
+}
+
+.icon_before {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 20rpx;
+}
+
+radio {
+    margin-left: 20rpx;
+}
+
+radio .wx-radio-input {
+    width: 34rpx;
+    height: 34rpx;
+    border-radius: 50%;     /* 圆角 */
+    /* border: 2rpx solid red; */
+}
+
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;     /* 圆角 */
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 30rpx;       /* 勾大小 */
+    color: #fff;			/* 白色勾  */
+    transform: translate(-50%, -50%) scale(1);
+}

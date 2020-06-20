@@ -1,0 +1,56 @@
+<!--pages/dateDetail/dateDetail.wxml-->
+<scroll-view class="all">
+  <view class="kuangjia1">
+    <view class="title">组内成员</view>
+    <scroll-view scroll-x class="users">
+      <view class="user_content" wx:for="{{users}}">
+        <image class="icons" mode='aspectFit' src='{{item.UserIcon}}' bindtap="want" wx:if="{{item.UserIcon=='../../imgs/join.png'}}"></image>
+        <image class="icons" mode='aspectFit' src='{{item.UserIcon}}' bindtap="leave" wx:else></image>
+        <view class="name {{item.UserGender==0?'girl':(item.UserGender==1?'boy':'unknow')}}" wx:if="{{index==0}}">局长</view>
+        <view class="name {{item.UserGender==0?'girl':(item.UserGender==1?'boy':'unknow')}}" wx:else>0{{index+1}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="kuangjia2">
+    <view class="title">详情</view>
+    <view class="user">
+      <image class="icons" mode='aspectFit' src='../../imgs/icon.png'></image>
+      <view class="user_desc">
+        <view class="name">局长</view>
+        <view class="time">{{date.Time}}</view>
+      </view>
+    </view>
+    <view class="content">{{date.DateDesc}}</view>
+    <view class="picture">
+      <image class="pic" bindtap="imgYu" data-list="{{date.DateImgs}}" data-src="{{img}}" src='{{img}}'
+       wx:for="{{date.DateImgs}}" wx:for-item="img" mode='aspectFill' lazy-load='true'></image>
+    </view>
+    <view class="location_content" bindtap="showLocation">
+      <image src="../../imgs/location.png" class="icon_location"/>
+      {{date.Location.Name}}
+      <image src="../../imgs/go.png" class="icon_go"/>
+    </view>
+  </view>
+  <view class="kuangjia3">
+    <button class="go1" bindtap="want" wx:if="{{!hasJoined}}">我想去</button>
+    <button class="go1" bindtap="leave" wx:elif="{{isOwner}}">取消了</button>
+    <button class="go1" bindtap="leave" wx:else>不去了</button>
+  </view>
+  <view class="kuangjia4">
+    <view class="title">公开讨论</view>
+    <view class="discussion" wx:for="{{discussions}}">
+      <view class="user">
+        <image class="icons" mode='aspectFit' src='{{item.UserIcon}}'></image>
+        <view>
+          <view class="name">{{item.UserName}}</view>
+          <view class="time">{{item.Time}}</view>
+        </view>
+      </view>
+      <view class="desc">{{item.Desc}}</view>
+    </view>
+  </view>
+</scroll-view>
+<view class="send_content">
+  <textarea auto-height="true" placeholder="在此输入公开讨论内容" value="{{sendText}}" bindinput="input"></textarea>
+  <button class="send" bindtap="send">发送</button>
+</view>

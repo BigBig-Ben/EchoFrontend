@@ -1,0 +1,122 @@
+/* pages/date/date.wxss */
+.icons {
+  width: 40rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.kuangjia2{
+  height:100rpx;
+  width: 100%;
+  white-space: nowrap;
+  position: relative;
+  top:20rpx;
+}
+
+.seat{
+  height:70rpx;
+  width: 25%; 
+  margin-left:20rpx;
+  display: inline-block;
+  text-align: center;
+  line-height: 70rpx;
+
+  border: 4rpx solid #000000;
+  border-radius: 30rpx;
+  color:rgba(99, 98, 98, 0.693);
+  font-size: 30rpx;
+  box-shadow:0rpx 0rpx 3rpx 3rpx rgb(87, 87, 87);
+}
+
+.line{
+  width:6rpx;
+  height:60rpx;
+  display: inline-block;
+  margin-left:20rpx;
+  background-color: #000000;
+  vertical-align: middle;
+}
+
+.tag{
+  display: inline-block;
+  height:70rpx;
+  width: 20%; 
+  margin-top:0rpx;
+  margin-left:20rpx;
+  text-align: center;
+  line-height: 70rpx;
+
+  border: 4rpx solid #000000;
+  border-radius: 30rpx;
+  color:rgba(99, 98, 98, 0.693);
+  font-size: 30rpx;
+  box-shadow:0rpx 0rpx 3rpx 3rpx rgb(87, 87, 87);
+}
+
+.active {
+  color: #ffffff;
+  background-color: rgb(255, 54, 9);
+}
+
+.kuangjia3{
+  height:230rpx;
+  width: 94%;
+  position: relative;
+  left:18rpx;
+  margin-top:30rpx;
+
+  border: 4rpx solid #000000;
+  border-radius: 30rpx;
+  box-shadow:4rpx 4rpx 6rpx 6rpx #575757;
+}
+.margin{
+  height:230rpx;
+  width: 15%; 
+  float:left;
+  text-align: center;
+  line-height: 230rpx;
+  border-radius:30rpx 0 0 30rpx;
+  color:white;
+  font-weight: 1000;
+}
+.right{
+  float:left;
+  height:230rpx;
+  width:84%;
+}
+.content{
+  height:100rpx;
+  width: 90%;
+  position: relative;
+  left: 50rpx;
+  top:50rpx;
+  word-break:break-all;
+  align-items: center;
+  justify-content:flex-start;
+
+  font-weight: 500;
+}
+.time{
+  position: relative;
+  top:40rpx;
+  right:30rpx;
+  text-align:right;
+  color:rgba(87, 86, 86, 0.693);
+  font-size: 30rpx;
+  font-weight: 1000;
+}
+
+.study {
+  background-color: #1b91ff;
+}
+
+.game {
+  background-color: #d197e2;
+}
+
+.sports {
+  background-color: #f74f1c;
+}
+
+.others {
+  background-color: #575757;
+}

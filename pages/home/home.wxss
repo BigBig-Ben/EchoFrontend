@@ -1,0 +1,124 @@
+/* .content {
+  padding: 0 30rpx 0 30rpx;
+} */
+
+.headNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.headNav > view {
+  text-align: center;
+  width: 30%;
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.record {
+  padding: 30rpx;
+  border-bottom: solid 1rpx #cfcfcf;
+}
+
+.h_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: #9f9f9f solid 1rpx;
+}
+
+.t_content {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 26rpx;
+}
+
+.time {
+  font-size: 24rpx;
+  opacity: 0.5;
+}
+
+.d_content {
+  margin-top: 20rpx;
+  padding-left: 100rpx;
+}
+
+.desc {
+  font-size: 30rpx;
+}
+
+.imgs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.imgContainer {
+  width: 33%;
+  height: 202rpx;
+  position: relative;
+}
+
+.imgContainer image {
+  width: 99%;
+  height: 200rpx;
+}
+
+.active {
+  border-bottom: 4rpx solid #cc2733;
+  color: #cc2733;
+}
+
+.icon_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 100rpx;
+  margin-top: 10rpx;
+}
+
+.icon_content image {
+  margin-left: 20rpx;
+}
+
+.icon_content text {
+  font-size: 30rpx;
+}
+
+.icons {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.tag_content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 100rpx;
+  margin-top: 20rpx;
+}
+
+.tag {
+  height: 46rpx;
+  border: 2rpx solid #9f9f9f;
+  border-radius: 23rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  line-height: 46rpx;
+  padding: 0 10rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}

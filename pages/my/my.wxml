@@ -1,0 +1,43 @@
+<view>
+  <view class='infoView'>
+    <image mode='aspectFill' src="{{bgImg}}" class="bg"/>
+    <view class="shadow"></view>
+    <view class="content" bindtap="showModal">
+      <view class='setBtn' bindtap="goSetting">设置</view>
+      <view class='infoDesc'>
+        <image src='{{icon}}' class='icon'></image>
+        <view class='motto'>{{motto}}</view>
+      </view>
+    </view>
+    
+  </view>
+  <view class='record' wx:for="{{voices}}" wx:for-item="voice" bindtap='toDetail' data-voiceid='{{voice.VoiceId}}'>
+    <view class="time_delete">
+      <view class='time'>{{voice.Time}}</view>
+      <image src="../../imgs/delete2.png" catchtap="delete" data-voiceid='{{voice.VoiceId}}' data-index='{{index}}'/>
+    </view>
+    <view class='desc'>
+      {{voice.VoiceDesc}}
+    </view>
+    <view class='imgs'>
+      <image catchtap="imgYu" data-list="{{voice.VoiceImgs}}" data-src="{{img}}" src='{{img}}' class='img' wx:for="{{voice.VoiceImgs}}" wx:for-item="img" mode='widthFix' lazy-load='true'></image>
+    </view>
+    <view class='tag_content'>
+      <view class='tag' wx:for="{{voice.TagStr}}" wx:for-item="tag">{{tag}}</view>
+    </view>
+  </view>
+</view>
+<view class="modal" hidden="{{hideFlag}}">
+  <view class="modal-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+    <view class='Mselect'>
+      <view bindtap='chooseBg'>
+        选择图片
+      </view>
+    </view>
+    <view></view>
+    <view class='Mcancel' bindtap='mCancel'>
+      <text>取消</text>
+    </view>
+  </view>
+</view>

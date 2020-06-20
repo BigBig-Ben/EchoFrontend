@@ -1,0 +1,35 @@
+<view class="all">
+    <view class="head">
+        <view></view>
+        创建用户
+        <view class="submit" bindtap="submit">完成</view>
+    </view>
+    <view bindtap="iconToggle" class="icon_content">
+        <image src="../../imgs/camera.png" class="icon_before" />
+        选择头像
+        <image src="../../imgs/down.png" class="downArrow"/>
+        <image src="{{icon}}" class="icon"/>
+    </view>
+    <scroll-view scroll-y="{{true}}" hidden="{{hidden_flag}}">
+        <view class="img_content">
+            <image bindtap="chooseIcon" data-icon="{{item.URL}}" src='{{item.URL}}' class='img' wx:for="{{icons}}" mode='widthFix' lazy-load='true'></image>
+        </view>
+    </scroll-view>
+    <view class="content">
+        <image src="../../imgs/book.png" class="icon_before" />
+        编写描述：<input placeholder='20个字以内' maxlength="20" name='description' value="{{motto}}" bindblur="input"/>
+    </view>
+    <view class="content">
+        <image src="../../imgs/gender.png" class="icon_before" />
+        选择性别:
+        <radio-group bindchange="radiochange" name='gender' bindchange="changeGender">
+            <radio value='0' checked="{{gender==0}}">女生</radio>
+            <radio value='1' checked="{{gender==1}}">男生</radio>
+            <radio value='2' checked="{{gender==2}}">保密</radio>
+        </radio-group>
+    </view>
+    <view class="title">
+        <view class="title1">欢迎进入</view>
+        <view class="title2">Echo</view>
+    </view>
+</view>

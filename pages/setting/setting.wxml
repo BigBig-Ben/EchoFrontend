@@ -1,0 +1,30 @@
+<view class="all">
+    <view bindtap="iconToggle" class="icon_content">
+        <image src="../../imgs/camera.png" class="icon_before" />
+        修改头像
+        <image src="../../imgs/down.png" class="downArrow"/>
+        <image src="{{icon}}" class="icon"/>
+    </view>
+    <scroll-view scroll-y="{{true}}" hidden="{{hidden_flag}}">
+        <view class="img_content">
+            <image bindtap="chooseIcon" data-icon="{{item.URL}}" src='{{item.URL}}' class='img' wx:for="{{icons}}" mode='widthFix' lazy-load='true'></image>
+        </view>
+    </scroll-view>
+    <view class="content">
+        <image src="../../imgs/book.png" class="icon_before" />
+        修改描述：<input placeholder='20个字以内' maxlength="20" name='description' value="{{motto}}" bindblur="input"/>
+    </view>
+    <view class="content">
+        <image src="../../imgs/gender.png" class="icon_before" />
+        更改性别:
+        <radio-group bindchange="radiochange" name='gender' bindchange="changeGender">
+            <radio value='0' checked="{{gender==0}}">女生</radio>
+            <radio value='1' checked="{{gender==1}}">男生</radio>
+            <radio value='2' checked="{{gender==2}}">保密</radio>
+        </radio-group>
+    </view>
+    <view class="content">
+        <image src="../../imgs/diamond.png" class="icon_before" />
+        捐赠我们<image src="../../imgs/go.png" class="downArrow"/>
+    </view>
+</view>
